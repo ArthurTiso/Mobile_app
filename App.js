@@ -3,6 +3,10 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 
 export default function App() {
 
+  
+
+
+
   return (
     <View style={styles.container}>
       <View style={styles.box}>
@@ -13,25 +17,25 @@ export default function App() {
           }}
         />
         <Text style={styles.textLogo}>APP Legal</Text>
-        
       </View>
+      <View style={styles.box2}>
+        <View style={styles.user}>
+          <Image
+            style={styles.userAvatar}
+            source={{
+              uri: 'https://reactnative.dev/img/tiny_logo.png',
+            }}
+          />
 
-              <View style={styles.usuario}>
-                  <image
-                  style={styles.tinyLogo}
-                  source={{
-                    uri: 'https://reactnative.dev/img/tiny_logo.png',
-                  }}
-                />
-              </View>
-
-      <View style={styles.box2}></View>
-
-       <StatusBar style="auto" />
+          <View style={styles.userInfo}>
+            <Text style={styles.userName}>Sample name</Text>
+            <Text style={styles.userEmail}>Sample@email.com</Text>
+          </View>
+        </View>
+      </View>
     </View>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -39,31 +43,54 @@ const styles = StyleSheet.create({
   },
   box: {
     height: 100,
+    width: '100%',
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#1e62a7',
+    backgroundColor: '#bb1ca0',
     padding: 20,
     gap: 20
   },
   box2: {
     flex: 1,
-    backgroundColor: '#569c27'
+    backgroundColor: '#569c27',
+    justifyContent: 'flex-start',
+    width: 400,
   },
   tinyLogo: {
     width: 60,
     height: 60,
+    allignSelf: 'center'
   },
   textLogo: {
     fontSize: 20,
     color: '#fff',
     fontWeight: 'bold'
   },
-  usuario: {
-    height: 200,
-    width: 400,
-    backgroundColor: '#fff',
+  user: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    width: '90%',
+    backgroundColor: '#f5e4e4',
     borderRadius: 10,
+    margin: 20,
+    padding: 20,
+  },
 
-    gap: 200,
-  } 
+  userAvatar: {
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+  },
+  userInfo: {
+    marginLeft: 20,
+  },
+  userName:{
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#000',
+  },
+  userEmail:{
+    fontSize: 14, 
+    color: '#666',
+  }
 });
