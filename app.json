@@ -3,6 +3,10 @@
     "name": "Mobile_app",
     "slug": "Mobile_app",
     "version": "1.0.0",
+    "scheme": "Mobile_app",
+    "experiments": {
+      "typedRoutes": true
+    },
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -23,7 +27,11 @@
       "edgeToEdgeEnabled": true
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router"
+    ]
   }
 }

@@ -1,14 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image } from 'react-native';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import { useRouter } from 'expo-router';
 
-export default function App() {
+import { Link } from 'expo-router'
 
-  
+
+export default function ContactScreen() {
+
+ const router = useRouter();  
 
 
 
   return (
-    <View style={styles.container}>
+   <View style={styles.container}>
       <View style={styles.box}>
         <Image
           style={styles.tinyLogo}
@@ -16,7 +21,10 @@ export default function App() {
             uri: 'https://reactnative.dev/img/tiny_logo.png',
           }}
         />
-        <Text style={styles.textLogo}>APP Legal</Text>
+        <Text style={styles.textLogo}>Contato</Text>
+       
+        <Ionicons style={styles.icon} name="home" size={40} color="white" onPress={() => router.push('/')} />
+      
       </View>
       <View style={styles.box2}>
         <View style={styles.user}>
@@ -92,5 +100,8 @@ const styles = StyleSheet.create({
   userEmail:{
     fontSize: 14, 
     color: '#666',
+  },
+  icon: {
+    marginLeft: 'auto'
   }
 });
